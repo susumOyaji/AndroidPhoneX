@@ -64,7 +64,6 @@
     <Compile Include="CallService.cs" />
     <Compile Include="CallStateString.cs" />
     <Compile Include="DialerActivity.cs" />
-    <Compile Include="MainActivity.cs" />
     <Compile Include="OngoingCall.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

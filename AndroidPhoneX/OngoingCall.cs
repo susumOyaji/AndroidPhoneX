@@ -22,7 +22,7 @@ namespace AndroidPhoneX
 {
     public class OngoingCall
     {
-        public BehaviorSubject<int> state = BehaviorSubject<int>(0);
+        public BehaviorSubject<int> state = new BehaviorSubject<int>(0);
         private Call.Callback callback;
         private Call call;
 
@@ -64,7 +64,7 @@ namespace AndroidPhoneX
             .Subscribe(Console.WriteLine,() => Console.WriteLine("Completed"));
 
             //var create = ReactiveExtensions.Create();
-            //state = BehaviorSubject<int>(0);
+            //state = new BehaviorSubject<int>(0);
 
 
         }
@@ -75,20 +75,20 @@ namespace AndroidPhoneX
         //Subject f = Subject.Create<>;// .Finalize();
 
         
-         //static enum {
+         //public enum {
             // Create a BehaviorSubject to subscribe
         
-            //state = BehaviorSubject<int>(0);
-            /*
-            callback = new Call.Callback(){
+            //state = new BehaviorSubject<int>(0);
+            
+           // callback = new Call.Callback(){
                 
-                public void OnStateChanged(Call call, int newState)
-                {
+           //     public void OnStateChanged(Call call, int newState)
+           //     {
                     //Timber.d(call.toString());
                     //Change call state
-                    state.OnNext(newState);
-                }
-            };*/
+           //         state.OnNext(newState);
+           //     }
+           // };
         //}
         
     }//Class of end

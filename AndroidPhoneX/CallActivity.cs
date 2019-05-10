@@ -45,7 +45,7 @@ namespace AndroidPhoneX
         private CompositeDisposable disposables = new CompositeDisposable();
         private string number;
         private Button answer, hangup;
-        private TextView callInfo;
+        private TextView callInfo,textView;
        
 
 
@@ -62,9 +62,9 @@ namespace AndroidPhoneX
             answer = FindViewById<Button>(Resource.Id.answer);
             hangup = FindViewById<Button>(Resource.Id.hangup);
             callInfo = FindViewById<TextView>(Resource.Id.callInfo);
-                 
+            textView = FindViewById<TextView>(Resource.Id.textView2);
 
-            number = callInfo.ToString();// getIntent().getData().getSchemeSpecificPart();
+            number = "callInfo.ToString()";// getIntent().getData().getSchemeSpecificPart();
         }
 
         //@SuppressLint("CheckResult")
