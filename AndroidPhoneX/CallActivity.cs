@@ -53,19 +53,20 @@ namespace AndroidPhoneX
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_call);
 
 
             // Get our UI controls from the loaded layout
-            answer = FindViewById<Button>(Resource.Id.answer);
-            hangup = FindViewById<Button>(Resource.Id.hangup);
             callInfo = FindViewById<TextView>(Resource.Id.callInfo);
             textView = FindViewById<TextView>(Resource.Id.textView2);
+            answer = FindViewById<Button>(Resource.Id.answer);
+            hangup = FindViewById<Button>(Resource.Id.hangup);
 
-            number = "callInfo.ToString()";// getIntent().getData().getSchemeSpecificPart();
-        }
+
+            number = "Input to PhoneNumber";// getIntent().getData().getSchemeSpecificPart();
+       }
 
         //@SuppressLint("CheckResult")
         //@Override
@@ -118,11 +119,11 @@ namespace AndroidPhoneX
         {
             //callInfotext("callInfo");
 
-            //callInfo.SetText(anser,Resource.Id.callInfo);
-           
+            //callInfo.SetText(answer, Resource.Id.callInfo);
+            answer.SetText(Resource.Id.callInfo);
             // Set callInfo text by the state
             //callInfo.SetText(callStateString.AsString(state).ToLowerInvariant() + "\n" + "\n" + number);
-            callInfo.Text = callStateString.AsString(state).ToLowerInvariant() + "\n" + "\n" + number;
+            callInfo.Text = callStateString.AsString(state).ToLowerInvariant()  + "\n" + number;
 
 
             if (state == (int)CallState.Ringing)

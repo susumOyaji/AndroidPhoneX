@@ -1,6 +1,7 @@
 //package com.example.repeatcall;
 
 using System;
+using Android.Widget;
 using Android.Telecom;//.Call;
 using System.Reactive;
 using System.Reactive.Linq;
@@ -12,7 +13,7 @@ using Java.Lang;
 //using rx.Observer;
 //using rx.subjects.BehaviorSubject;
 using akarnokd.reactive_extensions;
-
+//using Android.Graphics.Drawables; 
 using System.Reactive.Concurrency;
 using System.Reactive.Joins;
 using Object = Java.Lang.Object;
@@ -22,13 +23,29 @@ namespace AndroidPhoneX
 {
     public class OngoingCall
     {
-        public BehaviorSubject<int> state = new BehaviorSubject<int>(0);
-        private Call.Callback callback;
+        public BehaviorSubject<int> state;
+        public Call.Callback callback;
         private Call call;
 
-       
 
-        public BehaviorSubject<int> GetState()
+        public OngoingCall()
+        {
+            // Create a BehaviorSubject to subscribe
+            state = new BehaviorSubject<int>(0);
+            /*
+            callback = new Call.Callback()
+            {
+                public void OnStateChanged(Call call, Integer newState)
+                {
+                    //Timber.d(call.toString());
+                    // Change call state
+                    this.state.OnNext(newState);
+                }
+            };*/
+        }
+
+
+        public BehaviorSubject<int> getState()
         {
             return state;
         }
@@ -59,41 +76,14 @@ namespace AndroidPhoneX
         public void hangup()
         {
             call.Disconnect();
-            var oddNumbers = Observable.Range(0, 10)
-            .Where(i => i % 2 == 0)
-            .Subscribe(Console.WriteLine,() => Console.WriteLine("Completed"));
-
-            //var create = ReactiveExtensions.Create();
-            //state = new BehaviorSubject<int>(0);
-
-
         }
 
+}//Class of end
+
+}
 
 
-        
-        //Subject f = Subject.Create<>;// .Finalize();
-
-        
-         //public enum {
-            // Create a BehaviorSubject to subscribe
-        
-            //state = new BehaviorSubject<int>(0);
-            
-           // callback = new Call.Callback(){
-                
-           //     public void OnStateChanged(Call call, int newState)
-           //     {
-                    //Timber.d(call.toString());
-                    //Change call state
-           //         state.OnNext(newState);
-           //     }
-           // };
-        //}
-        
-    }//Class of end
-
-    /*
+   /*
     public enum {
         // Create a BehaviorSubject to subscribe
         state = BehaviorSubject<int>.create(),
@@ -106,10 +96,6 @@ namespace AndroidPhoneX
         };
     }
     */
-
-
-}
-
 
 
 
