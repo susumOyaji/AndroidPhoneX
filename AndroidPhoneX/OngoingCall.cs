@@ -9,15 +9,14 @@ using System.Reactive.Disposables;
 using System.Reactive.Subjects;
 using System.Reactive.Threading.Tasks;
 using Java.Lang;
-//using io.reactivex.subjects;
-//using rx.Observer;
-//using rx.subjects.BehaviorSubject;
 using akarnokd.reactive_extensions;
 //using Android.Graphics.Drawables; 
 using System.Reactive.Concurrency;
 using System.Reactive.Joins;
 using Object = Java.Lang.Object;
 //using static Android.Content.PM.LauncherApps;
+
+
 
 namespace AndroidPhoneX
 {
@@ -78,7 +77,7 @@ namespace AndroidPhoneX
             call.Disconnect();
         }
 
-}//Class of end
+    }//Class of end
 
 }
 
